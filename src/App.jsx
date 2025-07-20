@@ -17,13 +17,13 @@ export const App = () => {
   return (
     <div className="app">
       <div className="counter">{count}</div>
-      <button className="add1" onClick={addOne}>
+      <button type="button" className="add1" onClick={addOne}>
         Add 1
       </button>
-      <button className="add100" onClick={add100}>
+      <button type="button" className="add100" onClick={add100}>
         Add 100
       </button>
-      <button className="increase" onClick={increase}>
+      <button type="button" className="increase" onClick={increase}>
         Increase
       </button>
     </div>

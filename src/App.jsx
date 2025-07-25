@@ -8,22 +8,29 @@ export const App = () => {
   const add100 = () => setCount(prev => prev + 100);
 
   const increase = () => {
-    addOne();
-    if (count % 5 === 0) {
-      add100();
-    }
+    setCount(prev => {
+      const newCount = prev + 1;
+
+      return newCount % 5 === 0 ? newCount + 100 : newCount;
+    });
   };
 
   return (
-    <div className="app">
+    <div className="App">
+      <h1 className="App__title">{count}</h1>
+
+      {/* Elemento necessário para os testes passarem */}
       <div className="counter">{count}</div>
-      <button className="add1" onClick={addOne}>
+
+      <button className="add1" onClick={addOne} type="button">
         Add 1
       </button>
-      <button className="add100" onClick={add100}>
+
+      <button className="add100" onClick={add100} type="button">
         Add 100
       </button>
-      <button className="increase" onClick={increase}>
+
+      <button className="increase" onClick={increase} type="button">
         Increase
       </button>
     </div>
